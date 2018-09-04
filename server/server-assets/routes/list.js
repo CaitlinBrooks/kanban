@@ -3,6 +3,7 @@ let Lists = require('../models/list')
 
 //GET
 router.get('/', (req, res, next) => {
+  // @ts-ignore
   Lists.find({ authorId: req.session.uid })
     .then(data => {
       res.send(data)
@@ -15,10 +16,11 @@ router.get('/', (req, res, next) => {
 
 //POST
 router.post('/', (req, res, next) => {
+  // @ts-ignore
   req.body.authorId = req.session.uid
   Lists.create(req.body)
-    .then(newBoard => {
-      res.send(newBoard)
+    .then(newList => {
+      res.send(newList)
     })
     .catch(err => {
       console.log(err)
@@ -30,6 +32,7 @@ router.post('/', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
   Lists.findById(req.params.id)
     .then(list => {
+      // @ts-ignore
       if (!list.authorId.equals(req.session.uid)) {
         return res.status(401).send("ACCESS DENIED!")
       }
@@ -50,13 +53,16 @@ router.put('/:id', (req, res, next) => {
 
 //DELETE
 //deletes a whole list
+// @ts-ignore
 router.delete('/:id', (req, res, next) => {
   Lists.findById(req.params.id)
     .then(list => {
+      // @ts-ignore
       if (!list.authorId.equals(req.session.uid)) {
         return res.status(401).send("ACCESS DENIED!")
       }
       Lists.findByIdAndRemove(req.params.id)
+        // @ts-ignore
         .then(data => {
           res.send('DELORTED')
         })

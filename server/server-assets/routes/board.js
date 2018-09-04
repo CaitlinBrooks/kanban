@@ -3,6 +3,7 @@ let Boards = require('../models/board')
 
 //GET
 router.get('/', (req, res, next) => {
+  // @ts-ignore
   Boards.find({ authorId: req.session.uid })
     .then(data => {
       res.send(data)
@@ -15,6 +16,7 @@ router.get('/', (req, res, next) => {
 
 //POST
 router.post('/', (req, res, next) => {
+  // @ts-ignore
   req.body.authorId = req.session.uid
   Boards.create(req.body)
     .then(newBoard => {
@@ -30,6 +32,7 @@ router.post('/', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
   Boards.findById(req.params.id)
     .then(board => {
+      // @ts-ignore
       if (!board.authorId.equals(req.session.uid)) {
         return res.status(401).send("ACCESS DENIED!")
       }
@@ -50,13 +53,16 @@ router.put('/:id', (req, res, next) => {
 
 //DELETE
 //deletes a whole board
+// @ts-ignore
 router.delete('/:id', (req, res, next) => {
   Boards.findById(req.params.id)
     .then(board => {
+      // @ts-ignore
       if (!board.authorId.equals(req.session.uid)) {
         return res.status(401).send("ACCESS DENIED!")
       }
       Boards.findByIdAndRemove(req.params.id)
+        // @ts-ignore
         .then(data => {
           res.send('DELORTED')
         })
