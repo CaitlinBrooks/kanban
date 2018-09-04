@@ -52,8 +52,8 @@ router.put('/:id', (req, res, next) => {
 })
 
 //DELETE
-//deletes a whole board
 // @ts-ignore
+//deletes a whole board
 router.delete('/:id', (req, res, next) => {
   Comments.findById(req.params.id)
     .then(comment => {
