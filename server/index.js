@@ -51,8 +51,6 @@ let commentRoutes = require('./server-assets/routes/comment')
 server.use('/api/comments', commentRoutes)
 
 
-
-
 //Catch all
 server.get('*', (req, res, next) => {
   res.status(404).send({
