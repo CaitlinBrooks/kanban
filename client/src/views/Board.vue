@@ -15,6 +15,9 @@
       }
       else (this.$store.dispatch("getLists", this.boardId))
     },
+    mounted() {
+      getLists()
+    },
     props: ["boardId"],
     props: ["listId"],
     computed: {
