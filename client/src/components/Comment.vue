@@ -1,5 +1,7 @@
 <template>
-
+  <div class="comment">
+    {{commentId}}
+  </div>
 </template>
 
 <script>
