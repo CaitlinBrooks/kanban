@@ -1,6 +1,6 @@
 <template>
-  <div class="list">
-    {{taskId}}
+  <div class="task">
+    {{taskData}}
   </div>
 </template>
 
@@ -12,9 +12,12 @@
       if (!this.$store.state.user._id) {
         this.$router.push({ name: "login" });
       }
-      else (this.$store.dispatch("getList", taskId)) //get list might need to be getboard or other
+      // else (this.$store.dispatch("getList", taskId)) //get list might need to be getboard or other
     },
-    props: ["Task"]
+    mounted() {
+
+    },
+    props: ["taskData"]
   };
 </script>
 
