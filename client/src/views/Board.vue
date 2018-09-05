@@ -1,6 +1,7 @@
 <template>
   <div class="board">
     {{boardId}}
+    <!-- list component, v-for -->
   </div>
 </template>
 
@@ -12,9 +13,13 @@
       if (!this.$store.state.user._id) {
         this.$router.push({ name: "login" });
       }
-      else (this.$store.dispatch("getLists", boardId))
+      else (this.$store.dispatch("getLists", this.boardId))
     },
-    props: ["boardId"]
+    props: ["boardId"],
+    props: ["listId"],
+    computed: {
+
+    }
   };
 
 </script> methods: { getList() { this.$store.dispatch("register", this.newUser); },

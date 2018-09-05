@@ -17,7 +17,7 @@
     mounted() {
 
     },
-    props: ["boardId"]
+    props: ["List"]
   };
   // computed: ""
 
