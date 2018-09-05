@@ -1,11 +1,15 @@
 <template>
   <div class="board">
     {{boardId}}
-    <!-- list component, v-for -->
+    <list :listData="list" v-for="list in lists" :key="list._id" />
+    <!-- <router-link :to="{name: 'list', params: {listId: list._id}}">{{list.title}}</router-link>
+      <button @click="deletelist(list._id)">DELETE LIST</button> -->
+    <!-- </div> -->
   </div>
 </template>
 
 <script>
+  import list from "../components/List.vue"
   export default {
     name: "board",
     created() {
@@ -21,7 +25,12 @@
     props: ["boardId"],
     // props: ["listId"],
     computed: {
-
+      lists() {
+        return this.$store.state.lists
+      }
+    },
+    components: {
+      list
     }
   };
 

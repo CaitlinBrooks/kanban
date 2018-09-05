@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    {{listId}}
+    {{listData}}
   </div>
 </template>
 
@@ -12,12 +12,12 @@
       if (!this.$store.state.user._id) {
         this.$router.push({ name: "login" });
       }
-      else (this.$store.dispatch("getTasks", boardId)) //listId?
+      // else (this.$store.dispatch("getTasks", "boardId")) //listId?
     },
     mounted() {
 
     },
-    props: ["List"]
+    props: ["listData"]
   };
   // computed: ""
 
