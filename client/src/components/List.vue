@@ -13,6 +13,9 @@
         this.$router.push({ name: "login" });
       }
     },
+    mounted() {
+
+    },
     props: ["boardId"]
   };
 </script>
