@@ -38,6 +38,18 @@ router.post('/', (req, res, next) => {
       next()
     })
 })
+router.post('/', (req, res, next) => {
+  // @ts-ignore
+  req.body.authorId = req.session.uid
+  Lists.create(req.body)
+    .then(newList => {
+      res.send(newList)
+    })
+    .catch(err => {
+      console.log(err)
+      next()
+    })
+})
 
 //PUT
 router.put('/:id', (req, res, next) => {
