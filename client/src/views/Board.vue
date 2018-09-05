@@ -19,7 +19,7 @@
       getLists()
     },
     props: ["boardId"],
-    props: ["listId"],
+
     computed: {
 
     }
