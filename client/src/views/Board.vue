@@ -16,7 +16,7 @@
       else (this.$store.dispatch("getLists", this.boardId))
     },
     props: ["boardId"],
-    props: ["listId"],
+    // props: ["listId"],
     computed: {
 
     }
