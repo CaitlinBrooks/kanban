@@ -16,15 +16,16 @@
       if (!this.$store.state.user._id) {
         this.$router.push({ name: "login" });
       }
-      else (this.$store.dispatch("getLists", this.boardId))
     },
     mounted() {
-      getLists()
+      this.$store.dispatch("getLists", this.boardId)
     },
     props: ["boardId"],
     // props: ["listId"],
     computed: {
-
+      lists() {
+        return this.$store.state.setLists
+      }
     }
   };
 
