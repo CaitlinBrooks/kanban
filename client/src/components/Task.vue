@@ -14,7 +14,7 @@
       }
       else (this.$store.dispatch("getList", taskId)) //get list might need to be getboard or other
     },
-    props: ["boardId"] //would this change? the task would need to get to the list and the list to the board.
+    props: ["Task"]
   };
 </script>
 
