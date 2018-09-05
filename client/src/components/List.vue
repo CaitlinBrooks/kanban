@@ -18,6 +18,8 @@
     },
     props: ["boardId"]
   };
+  // computed: ""
+
 </script>
 
 <!-- <template>
