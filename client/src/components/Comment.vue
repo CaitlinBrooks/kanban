@@ -13,7 +13,7 @@
         this.$router.push({ name: "login" });
       }
     },
-    props: ["boardId"] //
+    props: ["boardId"]
   };
 </script>
 
