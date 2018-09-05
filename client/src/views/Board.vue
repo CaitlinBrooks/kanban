@@ -19,11 +19,7 @@
       getLists()
     },
     props: ["boardId"],
-<<<<<<< HEAD
-
-=======
     // props: ["listId"],
->>>>>>> 78c75146740fd17529e423360e0413bc8673b2ea
     computed: {
 
     }
