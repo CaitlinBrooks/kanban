@@ -16,6 +16,7 @@
     },
     props: ["boardId"]
   };
-</script>
+
+</script> methods: { getList() { this.$store.dispatch("register", this.newUser); },
 
 <!-- bring in the list component to this board vue -->
