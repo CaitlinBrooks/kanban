@@ -22,10 +22,14 @@ export default new Vuex.Store({
     user: {},
     boards: [],
 <<<<<<< HEAD
+<<<<<<< HEAD
     activeBoard: {},
     lists: {}
 =======
     lists: [],
+=======
+    lists: {},
+>>>>>>> ba90451aa9aebb17123ed724e02cbda4efdc4728
     activeBoard: {}
 >>>>>>> 64ca4067a450fc79e88adc627b4e7fbdb380b4b4
   },
