@@ -12,6 +12,7 @@
       if (!this.$store.state.user._id) {
         this.$router.push({ name: "login" });
       }
+      else (this.$store.dispatch("getTasks", boardId)) //listId?
     },
     mounted() {
 
