@@ -1,6 +1,7 @@
 <template>
   <div class="task">
     {{taskData}}
+    <comment :commentData="comment" v-for="comment in comments" :key="comment._id" />
   </div>
 </template>
 
