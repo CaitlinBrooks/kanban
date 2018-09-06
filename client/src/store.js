@@ -48,6 +48,7 @@ export default new Vuex.Store({
     setLists(state, lists) {
       state.lists = lists
     },
+    //state.tasks[payload.listId] = payload.tasks
     setTasks(state, payload) {
       Vue.set(state.tasks, payload.listId, payload.tasks)
 
@@ -59,13 +60,10 @@ export default new Vuex.Store({
       //   }
       //   tasksObj[task.listId].push(task)
       // });
-
-
-      //state.tasks[payload.listId] = payload.tasks
     },
+    //state.comments[payload.taskId] = payload.comments
     setComments(state, payload) {
       Vue.set(state.comments, payload.taskId, payload.comments)
-      //state.comments[payload.taskId] = payload.comments
     }
   },
   actions: {
