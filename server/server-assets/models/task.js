@@ -11,3 +11,4 @@ let schema = new Schema({
 })
 
 module.exports = mongoose.model(schemaName, schema)
+
