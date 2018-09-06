@@ -39,7 +39,6 @@ export default new Vuex.Store({
     setTasks(state, payload) {
       state.tasks[payload.listId] = payload.tasks
     },
-    //not sure if this is correct logic for this method -Jackson
     setComments(state, payload) {
       state.comment[payload.taskId] = payload.comments
     }
