@@ -22,8 +22,8 @@ export default new Vuex.Store({
     user: {},
     boards: [],
     activeBoard: {},
-    lists: {}
-
+    lists: {},
+    tasks: {}
   },
   mutations: {
     setUser(state, user) {
@@ -34,7 +34,10 @@ export default new Vuex.Store({
     },
     setLists(state, lists) {
       state.lists = lists
-    }
+    },
+    setTasks(state, tasks) {
+      state.tasks = tasks
+    },
   },
   actions: {
     //AUTH STUFF
@@ -99,5 +102,24 @@ export default new Vuex.Store({
           dispatch('getLists')
         })
     },
+    // TASKS
+    getTasks({ commit, dispatch }, listId) {
+      api.get('tasks')
+        .then(res => {
+          commit('setTasks', res.data)
+        })
+    },
+    addTask({ commit, dispatch }, listData) { //boardData?
+      api.post('tasks', listData)
+        .then(serverList => {
+          dispatch('getTasks')
+        })
+    },
+    deleteTask({ commit, dispatch }, listId) {
+      api.delete('lists/' + listId)
+        .then(res => {
+          dispatch('getTasks')
+        })
+    }
   }
 })
