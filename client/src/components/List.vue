@@ -14,7 +14,7 @@
       if (!this.$store.state.user._id) {
         this.$router.push({ name: "login" });
       }
-      else (this.$store.dispatch("getTasks", this.listId))
+      else (this.$store.dispatch("getTasks", this.listData._id))
     },
     mounted() {
       this.$store.dispatch("getTasks")
@@ -22,7 +22,7 @@
     props: ["listData"],
     computed: {
       tasks() {
-        return this.$store.state.tasks[this.listId] || []
+        return this.$store.state.tasks[this.listData._id] || []
       }
     },
     components: {

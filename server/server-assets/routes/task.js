@@ -4,7 +4,7 @@ let Tasks = require('../models/task')
 //GET
 router.get('/', (req, res, next) => {
   // @ts-ignore
-  Tasks.find({ authorId: req.params.id })
+  Tasks.find({ authorId: req.session.id })
     .then(data => {
       res.send(data)
     })
