@@ -35,8 +35,8 @@ export default new Vuex.Store({
     setLists(state, lists) {
       state.lists = lists
     },
-    setTasks(state, tasks) {
-      state.tasks = tasks
+    setTasks(state, payload) {
+      state.tasks[payload.listId] = payload.tasks
     },
   },
   actions: {
@@ -106,7 +106,7 @@ export default new Vuex.Store({
     getTasks({ commit, dispatch }, listId) {
       api.get('tasks')
         .then(res => {
-          commit('setTasks', res.data)
+          commit('setTasks', { listId, tasks: res.data })
         })
     },
     addTask({ commit, dispatch }, listData) { //boardData?

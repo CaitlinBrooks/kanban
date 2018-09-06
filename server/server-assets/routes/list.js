@@ -1,5 +1,6 @@
 let router = require('express').Router()
 let Lists = require('../models/list')
+let Tasks = require('../models/task')
 
 //GET
 router.get('/', (req, res, next) => {
@@ -66,6 +67,20 @@ router.delete('/:id', (req, res, next) => {
         .then(data => {
           res.send('DELORTED')
         })
+    })
+})
+
+
+//api/lists/listId/tasks
+router.get('/:listId/tasks', (req, res, next) => {
+  // @ts-ignore
+  Tasks.find({ listId: req.params.listId })
+    .then(data => {
+      res.send(data)
+    })
+    .catch(err => {
+      console.log(err)
+      next()
     })
 })
 
