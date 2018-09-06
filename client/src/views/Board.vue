@@ -38,6 +38,16 @@
     }
   };
 
-</script> methods: { getList() { this.$store.dispatch("register", this.newUser); },
+  // <div class="dropdown">
+  //   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+  //     aria-expanded="false">
+  //     ACTIONS
+  // </button>
+  //   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  //     <a class="dropdown-item" href="#">Move Task</a>
+  //     <a class="dropdown-item" href="#">Add New Task</a>
+  //     <a class="dropdown-item" href="#">Delete Task</a>
+  //   </div>
+  // </div>
 
-<!-- bring in the list component to this board vue -->
+</script> methods: { getList() { this.$store.dispatch("register", this.newUser); },
