@@ -16,6 +16,16 @@ let api = Axios.create({
   timeout: 3000,
   withCredentials: true
 })
+//let boardDictionary = {
+//   Board: "this.board",
+//    boardId: "this.boardId",
+//  List:"this.list",
+//  listId:"this.listId",
+//    Task:"this.task",
+//  taskId:"this.taskId",
+//  Comment:"this.comment",
+// commentId:"this.commentId"
+// };
 
 export default new Vuex.Store({
   state: {
