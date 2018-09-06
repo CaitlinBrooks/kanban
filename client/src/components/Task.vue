@@ -6,6 +6,7 @@
 </template>
 
 <script>
+  import comment from "../components/Comment.vue"
   export default {
     name: "task",
     created() {
@@ -13,13 +14,21 @@
       if (!this.$store.state.user._id) {
         this.$router.push({ name: "login" });
       }
-      // else (this.$store.dispatch("getList", taskId)) //get list might need to be getboard or other
+      else (this.$store.dispatch("getComments", this.taskId))
     },
     mounted() {
-
+      this.$store.dispatch("getComments")
     },
-    props: ["taskData"]
-  };
+    props: ["taskData"],
+    computed: {
+      comments() {
+        return this.$store.state.comments[this.commentId] || []
+      }
+    },
+    components: {
+      comment
+    }
+  }
 </script>
 
 <style scoped>

@@ -71,5 +71,17 @@ router.delete('/:id', (req, res, next) => {
     })
 })
 
+// api/listId/tasks/commentId
+router.get('/:taskId/comments', (req, res, next) => {
+  // @ts-ignore
+  Comments.find({ taskId: req.params.taskId })
+    .then(data => {
+      res.send(data)
+    })
+    .catch(err => {
+      console.log(err)
+      next()
+    })
+})
 
 module.exports = router

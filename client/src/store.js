@@ -27,6 +27,8 @@ let api = Axios.create({
 // commentId:"this.commentId"
 // };
 
+// FUNCTION TO CREATE A DICTIONARY?
+
 export default new Vuex.Store({
   state: {
     user: {},
@@ -34,7 +36,7 @@ export default new Vuex.Store({
     activeBoard: {},
     lists: {},
     tasks: {},
-    comment: {}
+    comments: {}
   },
   mutations: {
     setUser(state, user) {
@@ -50,7 +52,7 @@ export default new Vuex.Store({
       state.tasks[payload.listId] = payload.tasks
     },
     setComments(state, payload) {
-      state.comment[payload.taskId] = payload.comments
+      state.comments[payload.taskId] = payload.comments
     }
   },
   actions: {
@@ -133,6 +135,25 @@ export default new Vuex.Store({
       api.delete('lists/' + listId)
         .then(res => {
           dispatch('getTasks')
+        })
+    },
+    //COMMENTS
+    getComments({ commit, dispatch }, commentId) {
+      api.get('comments')
+        .then(res => {
+          commit('setComments', { commentId, tasks: res.data })
+        })
+    },
+    addComment({ commit, dispatch }, commentData) { //boardData?
+      api.post('comments', commentData)
+        .then(serverList => {
+          dispatch('getComments')
+        })
+    },
+    deleteComment({ commit, dispatch }, commentId) {
+      api.delete('tasks/' + commentId)
+        .then(res => {
+          dispatch('getComments')
         })
     }
   }

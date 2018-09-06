@@ -13,7 +13,7 @@
         this.$router.push({ name: "login" });
       }
     },
-    props: ["boardId", "taskId"] //not sure if this needs task id -Jackson
+    props: ["commentData"]
   };
 </script>
 
