@@ -31,8 +31,13 @@
         return this.$store.state.lists
       }
     },
+    tasks() {
+      return this.$store.state.tasks
+    }
+    ,
     components: {
-      list
+      list,
+      task
     }
   };
 
