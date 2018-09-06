@@ -1,7 +1,7 @@
 <template>
   <div class="task">
     {{taskData}}
-    <div class="comment" : commentData="comment" v-for="comment in comments" :key="comment._id"></div>
+    <comment :commentData="comment" v-for="comment in comments" :key="comment._id" />
   </div>
 </template>
 
