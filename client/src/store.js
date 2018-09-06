@@ -49,10 +49,23 @@ export default new Vuex.Store({
       state.lists = lists
     },
     setTasks(state, payload) {
-      state.tasks[payload.listId] = payload.tasks
+      Vue.set(state.tasks, payload.listId, payload.tasks)
+
+      // THIS WILL ONLY WORK IF YOU ARE RETURNING ALL TASKS FOR THE BOARD
+      // let tasksObj = {}
+      // payload.tasks.forEach(task => {
+      //   if(!tasksObj[task.listId]){
+      //     tasksObj[task.listId]= []
+      //   }
+      //   tasksObj[task.listId].push(task)
+      // });
+
+
+      //state.tasks[payload.listId] = payload.tasks
     },
     setComments(state, payload) {
-      state.comments[payload.taskId] = payload.comments
+      Vue.set(state.comments, payload.taskId, payload.comments)
+      //state.comments[payload.taskId] = payload.comments
     }
   },
   actions: {
