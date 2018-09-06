@@ -17,6 +17,8 @@ let api = Axios.create({
   withCredentials: true
 })
 
+// FUNCTION TO CREATE A DICTIONARY?
+
 export default new Vuex.Store({
   state: {
     user: {},
