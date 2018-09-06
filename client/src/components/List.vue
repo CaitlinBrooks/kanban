@@ -22,7 +22,7 @@
     props: ["listData"],
     computed: {
       tasks() {
-        return this.$store.state.tasks[this.listId]
+        return this.$store.state.tasks[this.listId] || []
       }
     },
     components: {
