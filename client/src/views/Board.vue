@@ -2,7 +2,6 @@
   <div class="board">
     {{boardId}}
     <list :listData="list" v-for="list in lists" :key="list._id" />
-    <list :taskData="task" v-for="task in tasks" :key="task._id" />
     <!-- <router-link :to="{name: 'list', params: {listId: list._id}}">{{list.title}}</router-link>
       <button @click="deletelist(list._id)">DELETE LIST</button> -->
     <!-- </div> -->
@@ -11,7 +10,6 @@
 
 <script>
   import list from "../components/List.vue"
-  import task from "../components/Task.vue"
   export default {
     name: "board",
     created() {
@@ -36,8 +34,7 @@
     }
     ,
     components: {
-      list,
-      task
+      list
     }
   };
 

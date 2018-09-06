@@ -1,10 +1,13 @@
 <template>
   <div class="list">
     {{listData}}
+    <task :taskData="task" v-for="task in tasks" :key="task._id" />
+
   </div>
 </template>
 
 <script>
+  import task from "../components/Task.vue"
   export default {
     name: "list",
     created() {
@@ -17,7 +20,10 @@
     mounted() {
 
     },
-    props: ["listData"]
+    props: ["listData"],
+    components: {
+      task
+    }
   };
   // computed: ""
 
