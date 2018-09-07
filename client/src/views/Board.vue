@@ -33,7 +33,7 @@
     computed: {
       lists() {
         return this.$store.state.lists
-      }
+      },
     },
     tasks() {
       return this.$store.state.tasks
