@@ -2,6 +2,13 @@
   <div class="task">
     {{taskData}}
     <comment :commentData="comment" v-for="comment in comments" :key="comment._id" />
+
+    <form v-on:submit.prevent="createTask">
+      <input type="text" name="title" v-model="taskData.title" placeholder="title">
+      <input type="text" name="description" v-model="taskData.description" placeholder="description">
+      <button type="submit">send it</button>
+    </form>
+
   </div>
 </template>
 

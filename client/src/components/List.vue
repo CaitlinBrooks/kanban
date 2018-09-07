@@ -2,6 +2,7 @@
   <div class="list">
     {{listData}}
     <task :taskData="task" v-for="task in tasks" :key="task._id" />
+
   </div>
 </template>
 
