@@ -3,7 +3,7 @@
     <!-- same as in list taskData is whole object, can take parts if we want  -->
     {{taskData.title}}
     <comment :commentData="comment" v-for="comment in comments" :key="comment._id" />
-
+    <!-- this isnt working yet- can't get to comment view -->
     <form v-on:submit.prevent="createComment">
       <input type="text" name="title" v-model="commentData.title" placeholder="title">
       <input type="text" name="description" v-model="commentData.description" placeholder="description">
