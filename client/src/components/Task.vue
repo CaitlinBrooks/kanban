@@ -3,9 +3,9 @@
     {{taskData}}
     <comment :commentData="comment" v-for="comment in comments" :key="comment._id" />
 
-    <form v-on:submit.prevent="createTask">
-      <input type="text" name="title" v-model="taskData.title" placeholder="title">
-      <input type="text" name="description" v-model="taskData.description" placeholder="description">
+    <form v-on:submit.prevent="createComment">
+      <input type="text" name="title" v-model="commentData.title" placeholder="title">
+      <input type="text" name="description" v-model="commentData.description" placeholder="description">
       <button type="submit">send it</button>
     </form>
 
