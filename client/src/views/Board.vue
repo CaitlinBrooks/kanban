@@ -1,9 +1,10 @@
 <template>
   <div class="board">
     {{boardId}}
-    <form v-on:submit="createList">
+    <form v-on:submit.prevent="createList">
       <input type="text" name="title" v-model="listData.title" placeholder="title">
       <input type="text" name="description" v-model="listData.description" placeholder="description">
+      <button type="submit">send it</button>
     </form>
     <list :listData="list" v-for="list in lists" :key="list._id" />
     <!-- <router-link :to="{name: 'list', params: {listId: list._id}}">{{list.title}}</router-link>
@@ -49,6 +50,7 @@
       getList() { this.$store.dispatch("register", this.newUser); },
       createList() {
         this.$store.dispatch("addList", this.listData)
+        console.log("Hello from createList")
       }
     }
   };
