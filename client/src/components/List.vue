@@ -17,7 +17,8 @@
       else (this.$store.dispatch("getTasks", this.listData._id))
     },
     mounted() {
-      this.$store.dispatch("getTasks")
+      // this.$store.
+      // this.$store.dispatch("getTasks")
     },
     props: ["listData"],
     computed: {
