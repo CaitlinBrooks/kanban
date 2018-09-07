@@ -1,8 +1,6 @@
 <template>
   <div class="board">
     {{boardId}}
-    <!-- title: 
-      description: -->
     <form v-on:submit="createList">
       <input type="text" name="title" v-model="listData.title" placeholder="title">
       <input type="text" name="description" v-model="listData.description" placeholder="description">
