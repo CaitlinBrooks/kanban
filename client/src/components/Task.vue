@@ -1,6 +1,7 @@
 <template>
   <div class="task">
-    {{taskData}}
+    <!-- same as in list taskData is whole object, can take parts if we want  -->
+    {{taskData.title}}
     <comment :commentData="comment" v-for="comment in comments" :key="comment._id" />
 
     <form v-on:submit.prevent="createComment">

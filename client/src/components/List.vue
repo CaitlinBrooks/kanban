@@ -1,6 +1,7 @@
 <template>
   <div class="list">
-    {{listData}}
+    <!-- listData gives whole object, we can choose what to display off it here (makes it look much prettier)-->
+    {{listData.title}}
     <task :taskData="task" v-for="task in tasks" :key="task._id" />
 
   </div>
