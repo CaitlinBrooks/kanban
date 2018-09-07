@@ -3,7 +3,7 @@
     {{boardId}}
     <!-- title: 
       description: -->
-    <form>
+    <form v-on:submit="createList">
       <input type="text" name="title" v-model="listData.title" placeholder="title">
       <input type="text" name="description" v-model="listData.description" placeholder="description">
     </form>
@@ -18,6 +18,11 @@
   import list from "../components/List.vue"
   export default {
     name: "board",
+    data() {
+      return {
+        listData: { title: "", description: "" }
+      }
+    },
     created() {
       //blocks users not logged in
       if (!this.$store.state.user._id) {
@@ -41,10 +46,15 @@
     ,
     components: {
       list
+    },
+    methods: {
+      getList() { this.$store.dispatch("register", this.newUser); },
+      createList() {
+        this.$store.dispatch("addList", this.listData)
+      }
     }
   };
 
 </script>
 <!--not sure if we still need this here but I kept jic  -->
-<!-- methods: { getList() { this.$store.dispatch("register", this.newUser); }, -->
 <!-- bring in the list component to this board vue -->
