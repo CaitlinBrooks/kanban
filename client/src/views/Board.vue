@@ -44,6 +44,7 @@
     }
   };
 
-</script> methods: { getList() { this.$store.dispatch("register", this.newUser); },
-
+</script>
+<!--not sure if we still need this here but I kept jic  -->
+<!-- methods: { getList() { this.$store.dispatch("register", this.newUser); }, -->
 <!-- bring in the list component to this board vue -->
