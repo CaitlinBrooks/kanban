@@ -4,8 +4,8 @@
     <!-- title: 
       description: -->
     <form>
-      <input type="text" name="title" v-model="list.title" placeholder="title">
-      <input type="text" name="description" v-model="list.description" placeholder="description">
+      <input type="text" name="title" v-model="listData.title" placeholder="title">
+      <input type="text" name="description" v-model="listData.description" placeholder="description">
     </form>
     <list :listData="list" v-for="list in lists" :key="list._id" />
     <!-- <router-link :to="{name: 'list', params: {listId: list._id}}">{{list.title}}</router-link>
