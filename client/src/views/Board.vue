@@ -1,6 +1,12 @@
 <template>
   <div class="board">
     {{boardId}}
+    <!-- title: 
+      description: -->
+    <form>
+      <input type="text" name="title" v-model="list.title" placeholder="title">
+      <input type="text" name="description" v-model="list.description" placeholder="description">
+    </form>
     <list :listData="list" v-for="list in lists" :key="list._id" />
     <!-- <router-link :to="{name: 'list', params: {listId: list._id}}">{{list.title}}</router-link>
       <button @click="deletelist(list._id)">DELETE LIST</button> -->
