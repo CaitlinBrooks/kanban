@@ -1,9 +1,14 @@
 <template>
   <div class="board">
     {{boardId}}
+    <form v-on:submit.prevent="createList">
+      <input type="text" name="title" v-model="listData.title" placeholder="title">
+      <input type="text" name="description" v-model="listData.description" placeholder="description">
+      <button type="submit">send it</button>
+    </form>
     <list :listData="list" v-for="list in lists" :key="list._id" />
     <!-- <router-link :to="{name: 'list', params: {listId: list._id}}">{{list.title}}</router-link>
-      <button @click="deletelist(list._id)">DELETE LIST</button> -->
+        <button @click="deletelist(list._id)">DELETE LIST</button> -->
     <!-- </div> -->
   </div>
 </template>
@@ -12,6 +17,11 @@
   import list from "../components/List.vue"
   export default {
     name: "board",
+    data() {
+      return {
+        listData: { title: "", description: "" }
+      }
+    },
     created() {
       //blocks users not logged in
       if (!this.$store.state.user._id) {
@@ -27,7 +37,7 @@
     computed: {
       lists() {
         return this.$store.state.lists
-      }
+      },
     },
     tasks() {
       return this.$store.state.tasks
@@ -35,19 +45,16 @@
     ,
     components: {
       list
+    },
+    methods: {
+      getList() { this.$store.dispatch("register", this.newUser); },
+      createList() {
+        this.$store.dispatch("addList", this.listData)
+        console.log("Hello from createList")
+      }
     }
   };
 
-  // <div class="dropdown">
-  //   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-  //     aria-expanded="false">
-  //     ACTIONS
-  // </button>
-  //   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-  //     <a class="dropdown-item" href="#">Move Task</a>
-  //     <a class="dropdown-item" href="#">Add New Task</a>
-  //     <a class="dropdown-item" href="#">Delete Task</a>
-  //   </div>
-  // </div>
-
-</script> methods: { getList() { this.$store.dispatch("register", this.newUser); },
+</script>
+<!--not sure if we still need this here but I kept jic  -->
+<!-- bring in the list component to this board vue -->
