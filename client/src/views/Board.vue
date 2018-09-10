@@ -2,8 +2,8 @@
   <div class="board">
     {{boardId.title}}
     <form v-on:submit.prevent="createList">
-      <input type="text" name="title" v-model="listData.title" placeholder="New List">
-      <input type="text" name="description" v-model="listData.description" placeholder="description">
+      <input type="text" name="title" v-model="newList.title" placeholder="New List">
+      <input type="text" name="description" v-model="newList.description" placeholder="description">
       <button class="btn btn-success" type="submit">Send It</button>
     </form>
     <list :listData="list" v-for="list in lists" :key="list._id" />
@@ -20,7 +20,7 @@
     name: "board",
     data() {
       return {
-        listData: { title: "", description: "" }
+        newList: { title: "", description: "" }
       }
     },
     created() {
@@ -29,9 +29,6 @@
         this.$router.push({ name: "login" });
       }
       else (this.$store.dispatch("getLists", this.boardId))
-    },
-    mounted() {
-      this.$store.dispatch("getLists")
     },
     props: ["boardId"],
     // props: ["listId"],
