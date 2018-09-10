@@ -1,6 +1,6 @@
 <template>
   <div class="board">
-    {{boardId}}
+    {{boardId.title}}
     <form v-on:submit.prevent="createList">
       <input type="text" name="title" v-model="listData.title" placeholder="title">
       <input type="text" name="description" v-model="listData.description" placeholder="description">
