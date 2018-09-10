@@ -4,7 +4,7 @@
     <task :taskData="task" v-for="task in tasks" :key="task._id" />
     <form v-on:submit.prevent="createTask">
       <input type="text" name="description" v-model="newTask.description" placeholder=" task description">
-      <button class="btn btn-success" type="submit">Send It</button>
+      <button class="btn btn-success" type="submit">Add Task</button>
     </form>
 
   </div>
