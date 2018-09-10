@@ -5,6 +5,12 @@
       <input type="text" name="title" v-model="listData.title" placeholder="New Task">
       <input type="text" name="description" v-model="listData.description" placeholder="description">
       <button type="submit">Send It</button>
+      <!-- 
+      <div v-on:submit.prevent="createComment">
+        <input type="text" name="title" v-model="commentData.title" placeholder="New Comment">
+        <input type="text" name="description" v-model="commentData.description" placeholder="description">
+        <button type="submit">Send It</button>
+      </div> -->
     </form>
     <list :listData="list" v-for="list in lists" :key="list._id" />
     <!-- <router-link :to="{name: 'list', params: {listId: list._id}}">{{list.title}}</router-link>
