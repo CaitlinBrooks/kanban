@@ -2,7 +2,7 @@
   <div class="board">
     {{boardId.title}}
     <form v-on:submit.prevent="createList">
-      <input type="text" name="title" v-model="listData.title" placeholder="New Task">
+      <input type="text" name="title" v-model="listData.title" placeholder="New List">
       <input type="text" name="description" v-model="listData.description" placeholder="description">
       <button type="submit">Send It</button>
       <!-- 
