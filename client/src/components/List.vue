@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    {{listData}}
+    {{listData.title}}
     <task :taskData="task" v-for="task in tasks" :key="task._id" />
   </div>
 </template>
