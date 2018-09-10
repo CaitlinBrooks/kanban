@@ -4,7 +4,7 @@
     <form @submit.prevent="addBoard">
       <input type="text" placeholder="New Board" v-model="newBoard.title" required>
       <input type="text" placeholder="description" v-model="newBoard.description">
-      <button type="submit">Create Board</button>
+      <button class="btn btn-success" type="submit">Create Board</button>
     </form>
     <div v-for="board in boards" :key="board._id">
       <router-link :to="{name: 'board', params: {boardId: board._id}}">{{board.title}}</router-link>

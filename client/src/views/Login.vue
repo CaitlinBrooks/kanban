@@ -3,7 +3,7 @@
     <form v-if="loginForm" @submit.prevent="loginUser">
       <input type="email" v-model="creds.email" placeholder="email">
       <input type="password" v-model="creds.password" placeholder="password">
-      <button type="submit">Login</button>
+      <button class="btn btn-success" type="submit">Login</button>
     </form>
     <form v-else @submit.prevent="register">
       <input type="text" v-model="newUser.name" placeholder="name">
@@ -19,29 +19,29 @@
 </template>
 
 <script>
-export default {
-  name: "login",
-  data() {
-    return {
-      loginForm: true,
-      creds: {
-        email: "",
-        password: ""
-      },
-      newUser: {
-        email: "",
-        password: "",
-        name: ""
-      }
-    };
-  },
-  methods: {
-    register() {
-      this.$store.dispatch("register", this.newUser);
+  export default {
+    name: "login",
+    data() {
+      return {
+        loginForm: true,
+        creds: {
+          email: "",
+          password: ""
+        },
+        newUser: {
+          email: "",
+          password: "",
+          name: ""
+        }
+      };
     },
-    loginUser() {
-      this.$store.dispatch("login", this.creds);
+    methods: {
+      register() {
+        this.$store.dispatch("register", this.newUser);
+      },
+      loginUser() {
+        this.$store.dispatch("login", this.creds);
+      }
     }
-  }
-};
+  };
 </script>
