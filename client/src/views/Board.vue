@@ -4,19 +4,8 @@
     <form v-on:submit.prevent="createList">
       <input type="text" name="title" v-model="listData.title" placeholder="New List">
       <input type="text" name="description" v-model="listData.description" placeholder="description">
-<<<<<<< HEAD
-      <button type="submit">Send It</button>
-    </form>
-    <!-- 
-      <div v-on:submit.prevent="createComment">
-        <input type="text" name="title" v-model="commentData.title" placeholder="New Comment">
-        <input type="text" name="description" v-model="commentData.description" placeholder="description">
-        <button type="submit">Send It</button>
-      </div> -->
-=======
       <button class="btn btn-success" type="submit">Send It</button>
     </form>
->>>>>>> 758ac924c54e2695d8bb103c06a95709b86f8727
     <list :listData="list" v-for="list in lists" :key="list._id" />
     <!-- <router-link :to="{name: 'list', params: {listId: list._id}}">{{list.title}}</router-link>
         <button @click="deletelist(list._id)">DELETE LIST</button> -->
