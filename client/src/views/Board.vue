@@ -10,6 +10,7 @@
     <!-- <router-link :to="{name: 'list', params: {listId: list._id}}">{{list.title}}</router-link>
         <button @click="deletelist(list._id)">DELETE LIST</button> -->
     <!-- </div> -->
+    <button class="btn btn-light" type="submit">Logout</button>
   </div>
 
 </template>
