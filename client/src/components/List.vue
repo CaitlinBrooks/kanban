@@ -2,10 +2,12 @@
   <div class="list">
     {{listData.title}}
     <task :taskData="task" v-for="task in tasks" :key="task._id" />
+
   </div>
 </template>
 
 <script>
+  // draw tasks on list
   import task from "../components/Task.vue"
   export default {
     name: "list",
