@@ -5,8 +5,8 @@
 
 
     <form v-on:submit.prevent="createComment">
-      <input type="text" name="description" v-model="taskData.description" placeholder=" comment description">
-      <button class="btn btn-success" type="submit">Add comment</button>
+      <input type="text" name="description" v-model="taskData.description" placeholder="comment description">
+      <button class="btn btn-dark" type="submit">Add comment</button>
     </form>
   </div>
 </template>
