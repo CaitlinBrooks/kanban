@@ -11,6 +11,7 @@
         <button @click="deletelist(list._id)">DELETE LIST</button> -->
     <!-- </div> -->
   </div>
+
 </template>
 
 <script>
