@@ -1,10 +1,10 @@
 let router = require('express').Router()
 let Comments = require('../models/comment')
 
-//GET
-router.get('/', (req, res, next) => {
+//GET by TaskID
+router.get('/:taskId', (req, res, next) => {
   // @ts-ignore
-  Comments.find({ authorId: req.session.uid })
+  Comments.find({ taskId: req.params.taskId })
     .then(data => {
       res.send(data)
     })

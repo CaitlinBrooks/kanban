@@ -25,7 +25,7 @@ router.post('/', (req, res, next) => {
       res.send(newTask)
     })
     .catch(err => {
-      console.log(err)
+      res.status(400).send(err)
       next()
     })
 })

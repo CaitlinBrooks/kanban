@@ -17,11 +17,7 @@
   export default {
     name: "list",
     created() {
-      //blocks users not logged in
-      if (!this.$store.state.user._id) {
-        this.$router.push({ name: "login" });
-      }
-      else (this.$store.dispatch("getTasks", this.listData._id))
+      this.$store.dispatch("getTasks", this.listData._id)
     },
     props: ["listData"],
     data() {
@@ -34,7 +30,7 @@
     },
     methods: {
       createTask() {
-        this.$store.dispatch('addTask')
+        this.$store.dispatch('addTask', this.newTask)
       }
     },
     computed: {

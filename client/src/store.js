@@ -136,35 +136,42 @@ export default new Vuex.Store({
           commit('setTasks', { listId, tasks: res.data })
         })
     },
-    addTask({ commit, dispatch }, listData) { //boardData?
-      api.post('tasks', listData)
-        .then(serverList => {
-          dispatch('getTasks')
+    addTask({ commit, dispatch }, newTask) { //boardData?
+      api.post('tasks', newTask)
+        .then(res => {
+          dispatch('getTasks', newTask.listId)
         })
     },
-    deleteTask({ commit, dispatch }, listId) {
-      api.delete('lists/' + listId)
+    editTask({ commit, dispatch }, payload) {
+      api.put('tasks/' + payload.taskId, { listId: payload.newListId })
         .then(res => {
-          dispatch('getTasks')
+          dispatch('getTasks', payload.newListId)
+          dispatch('getTasks', payload.oldListId)
+        })
+    },
+    deleteTask({ commit, dispatch }, taskData) {
+      api.delete('tasks/' + taskData._id)
+        .then(res => {
+          dispatch('getTasks', taskData.listId)
         })
     },
     //COMMENTS
-    getComments({ commit, dispatch }, commentId) {
-      api.get('comments')
+    getComments({ commit, dispatch }, taskId) {
+      api.get('comments/' + taskId)
         .then(res => {
-          commit('setComments', { commentId, tasks: res.data })
+          commit('setComments', { taskId, comments: res.data })
         })
     },
     addComment({ commit, dispatch }, commentData) { //boardData?
       api.post('comments', commentData)
-        .then(serverList => {
-          dispatch('getComments')
+        .then(res => {
+          dispatch('getComments', commentData.taskId)
         })
     },
-    deleteComment({ commit, dispatch }, commentId) {
-      api.delete('tasks/' + commentId)
+    deleteComment({ commit, dispatch }, commentData) {
+      api.delete('tasks/' + commentData._id)
         .then(res => {
-          dispatch('getComments')
+          dispatch('getComments', commentData.taskId)
         })
     }
   }
