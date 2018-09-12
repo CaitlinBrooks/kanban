@@ -7,7 +7,7 @@
       <input type="text" name="description" v-model="newTask.description" placeholder="task description">
       <button class="btn btn-success" type="submit">Add Task</button>
     </form>
-
+    <button class="btn btn-light" v-on:submit.prevent="deleteList" @click="deleteList">Delete List</button>
   </div>
 </template>
 
@@ -31,6 +31,10 @@
     methods: {
       createTask() {
         this.$store.dispatch('addTask', this.newTask)
+      },
+      deleteList() {
+        this.$store.dispatch('deleteList', this.listData._id)
+
       }
     },
     computed: {
