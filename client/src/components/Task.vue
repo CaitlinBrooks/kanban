@@ -15,7 +15,6 @@
         <button type="submit">CHANGE LIST</button>
       </div>
     </form>
-
   </div>
 </template>
 
