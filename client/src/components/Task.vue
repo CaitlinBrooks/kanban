@@ -16,7 +16,6 @@
       </div>
       <button type="submit" @click="deleteTask">Delete Task</button>
     </form>
-
   </div>
 </template>
 
