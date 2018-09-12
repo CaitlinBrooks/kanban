@@ -32,6 +32,11 @@
         }
       }
     },
+    methods: {
+      createTask() {
+        this.$store.dispatch('addTask')
+      }
+    },
     computed: {
       tasks() {
         return this.$store.state.tasks[this.listData._id] || []

@@ -48,7 +48,7 @@
     methods: {
       getList() { this.$store.dispatch("register", this.newUser); },
       createList() {
-        this.$store.dispatch("addList", this.listData)
+        this.$store.dispatch("addList", this.newList)
         console.log("Hello from createList")
       }
     }
