@@ -169,7 +169,7 @@ export default new Vuex.Store({
         })
     },
     deleteComment({ commit, dispatch }, commentData) {
-      api.delete('tasks/' + commentData._id)
+      api.delete('comments/' + commentData._id)
         .then(res => {
           dispatch('getComments', commentData.taskId)
         })
