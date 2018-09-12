@@ -14,8 +14,8 @@
         </select>
         <button type="submit">CHANGE LIST</button>
       </div>
-      <button type="submit" @click="deleteTask">Delete Task</button>
     </form>
+    <button @click="deleteTask">Delete Task</button>
   </div>
 </template>
 
@@ -26,7 +26,7 @@
     created() {
       this.$store.dispatch("getComments", this.taskData._id)
     },
-    props: ["taskData", "deleteTask"],
+    props: ["taskData"],
     data() {
       return {
         newCom: {
@@ -56,6 +56,9 @@
           taskId: this.taskData._id
         }
         this.$store.dispatch('editTask', data)
+      },
+      deleteTask() {
+        this.$store.dispatch('deleteTask', this.taskData)
       }
     },
     components: {
