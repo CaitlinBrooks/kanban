@@ -15,7 +15,7 @@
         <button type="submit">CHANGE LIST</button>
       </div>
     </form>
-    <button v-on:submit.prevent="deleteTask" @click="deleteTask">Delete Task</button>
+    <button class="btn btn-light" v-on:submit.prevent="deleteTask" @click="deleteTask">Delete Task</button>
   </div>
 </template>
 

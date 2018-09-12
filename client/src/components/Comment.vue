@@ -12,7 +12,7 @@
     data() {
       return {
         newComment: {
-          taskId: this.commentData._id,
+          taskId: this.commentData,
           description: ''
         }
       }
