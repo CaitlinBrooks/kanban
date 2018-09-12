@@ -27,7 +27,7 @@
     created() {
       this.$store.dispatch("getComments", this.taskData._id)
     },
-    props: ["taskData"],
+    props: ["taskData", "deleteTask"],
     data() {
       return {
         newCom: {
