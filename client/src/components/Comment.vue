@@ -19,7 +19,7 @@
     },
     methods: {
       deleteComment() {
-        this.$store.dispatch('deleteComment', this.taskId)
+        this.$store.dispatch('deleteComment', this.commentData._id)
       }
     }
   };
