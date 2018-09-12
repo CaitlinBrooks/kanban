@@ -14,7 +14,7 @@
         </select>
         <button type="submit">CHANGE LIST</button>
       </div>
-      <button type="submit" @click="">Delete Task</button>
+      <button type="submit" @click="deleteTask">Delete Task</button>
     </form>
   </div>
 </template>
@@ -56,6 +56,10 @@
           taskId: this.taskData._id
         }
         this.$store.dispatch('editTask', data)
+      },
+
+      deleteTask() {
+        this.$store.dispatch('deleteTask', taskId)
       }
     },
     components: {
