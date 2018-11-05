@@ -1,4 +1,4 @@
-# Vue-Kanban
+# Kanban
 
 <strong>About</strong><br/>
 App description goes here.<br/>
